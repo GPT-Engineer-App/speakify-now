@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Heading, Text, Textarea, Button, Select, Flex, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image } from "@chakra-ui/react";
+import { Box, Heading, Text, Textarea, Button, Select, Flex, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Image, Checkbox } from "@chakra-ui/react";
 import { FaPlay, FaPause, FaStop } from "react-icons/fa";
 
 const Index = () => {
@@ -49,14 +49,35 @@ const Index = () => {
           <option value="female">Female</option>
         </Select>
       </Flex>
-      <Flex alignItems="center" marginBottom={8}>
-        <Text marginRight={4}>Speed:</Text>
-        <Slider value={speed} min={0.5} max={2} step={0.1} onChange={handleSpeedChange}>
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb />
-        </Slider>
+      <Flex direction="column" marginBottom={8}>
+        <Flex alignItems="center" marginBottom={4}>
+          <Text marginRight={4}>Stability:</Text>
+          <Slider defaultValue={0.5} min={0} max={1} step={0.1}>
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+        </Flex>
+        <Flex alignItems="center" marginBottom={4}>
+          <Text marginRight={4}>Similarity:</Text>
+          <Slider defaultValue={0.5} min={0} max={1} step={0.1}>
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+        </Flex>
+        <Flex alignItems="center" marginBottom={4}>
+          <Text marginRight={4}>Style Exaggeration:</Text>
+          <Slider defaultValue={0.5} min={0} max={1} step={0.1}>
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+        </Flex>
+        <Checkbox marginLeft={4}>Speaker boost</Checkbox>
       </Flex>
       <Flex>
         <Button leftIcon={<FaPlay />} colorScheme="blue" marginRight={4} onClick={handlePlay} isDisabled={!text}>
