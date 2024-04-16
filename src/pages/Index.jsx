@@ -20,20 +20,7 @@ const Index = () => {
     setSpeed(value);
   };
 
-  const handlePlay = () => {
-    setIsPlaying(true);
-    // TODO: Implement text-to-speech functionality
-  };
-
-  const handlePause = () => {
-    setIsPlaying(false);
-    // TODO: Implement pause functionality
-  };
-
-  const handleStop = () => {
-    setIsPlaying(false);
-    // TODO: Implement stop functionality
-  };
+  const handleGenerate = () => {};
 
   return (
     <Box maxWidth="800px" margin="auto" padding={8}>
@@ -79,17 +66,9 @@ const Index = () => {
         </Flex>
         <Checkbox marginLeft={4}>Speaker boost</Checkbox>
       </Flex>
-      <Flex>
-        <Button leftIcon={<FaPlay />} colorScheme="blue" marginRight={4} onClick={handlePlay} isDisabled={!text}>
-          {isPlaying ? "Playing" : "Play"}
-        </Button>
-        <Button leftIcon={<FaPause />} onClick={handlePause} isDisabled={!isPlaying}>
-          Pause
-        </Button>
-        <Button leftIcon={<FaStop />} colorScheme="red" marginLeft={4} onClick={handleStop} isDisabled={!isPlaying}>
-          Stop
-        </Button>
-      </Flex>
+      <Button colorScheme="blue" onClick={handleGenerate} isDisabled={!text}>
+        Generate
+      </Button>
     </Box>
   );
 };
