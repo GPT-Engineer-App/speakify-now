@@ -23,11 +23,11 @@ const Index = () => {
   const handleGenerate = () => {};
 
   return (
-    <Box maxWidth="800px" margin="auto" padding={8}>
+    <Box maxWidth="800px" margin="auto" padding={8} borderWidth={1} borderColor="black">
       <Heading as="h1" size="2xl" marginBottom={8}>
         Text to Speech Generator
       </Heading>
-      <Image src="https://images.unsplash.com/photo-1642764984371-cc6185b05bbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx0ZXh0JTIwdG8lMjBzcGVlY2glMjBpbGx1c3RyYXRpb258ZW58MHx8fHwxNzEzMjU5Mzk0fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Text to Speech" marginBottom={8} />
+
       <Textarea value={text} onChange={handleTextChange} placeholder="Enter your text here..." size="lg" marginBottom={4} />
       <Flex alignItems="center" marginBottom={4}>
         <Text marginRight={4}>Voice:</Text>
